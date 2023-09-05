@@ -35,5 +35,19 @@ function displayArtist(artistObj) {
   document.querySelector("#artists article:last-child .btn-update").addEventListener("click", () => updateClicked(artistObj));
   document.querySelector("#artists article:last-child img").addEventListener("click", () => showUserModal(artistObj));
 }
+function updateClicked(userObject) {
+  document.querySelector("#dialog-update-artist").showModal();
+  document.querySelector("#update-image").src = userObject.image;
+  document.querySelector("#form-update-artist").addEventListener("submit", updateUserClicked);
+}
 
+function deleteClicked(userObject) {
+  document.querySelector("#dialog-delete-artist").showModal();
+}
+
+function showUserModal(user) {
+  document.querySelector("#dialog-artist-info").showModal();
+}
+
+function updateUserClicked() {}
 // function sortByGenre()
