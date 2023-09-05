@@ -1,14 +1,15 @@
 "use strict";
 
-import { getArtists } from "./rest";
+import { getArtists } from "./rest.js";
 window.addEventListener("load", initApp);
 
-const globalArtists = [];
+let globalArtists = [];
 
 async function initApp() {
   console.log("frontend init");
   globalArtists = await getArtists();
-  displayArtists();
+  console.log(globalArtists);
+  displayArtists(globalArtists);
 }
 
 function displayArtists(artistLs) {
@@ -21,8 +22,8 @@ function displayArtist(artistObj) {
   const html = /*html*/ `
   <article class="grid-item-user">
     <img src="${artistObj.image}">
-    <h3>${artistObj.firstName} ${artistObj.lastName} </h3>
-    <h3>${artistObj.age} år</h3>
+    <h3>${artistObj.name}  </h3>
+    <h3>${artistObj.birthdate} Birthdate</h3>
     <div class="btns">
     <button class="btn-update">Opdater</button>
     <button class="btn-delete">Slet</button>
