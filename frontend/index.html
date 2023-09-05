@@ -18,7 +18,7 @@
       </div>
       <div>
         <label for="sort">Filtrer:</label>
-        <select id="sortByTeam" class="sort">
+        <select id="sortByGenre" class="sort">
           <option value="all" selected>Default</option>
         </select>
         <label for="sort"></label>
@@ -42,12 +42,9 @@
         <section>
           <h3><strong>Artist info</strong></h3>
           <img id="dialog-image" />
-          <h4 id="dialog-name">Navn</h4>
-          <h4 id="dialog-age">Alder</h4>
+          <h4 id="dialog-name">Name</h4>
+          <h4 id="dialog-age">Age</h4>
           <ul>
-            <li>Medlemsskab: <span id="dialog-subscription"></span></li>
-            <li>Rolle: <span id="dialog-role"></span></li>
-            <li>Disciplin: <span id="dialog-discipline"></span></li>
             <li>Køn: <span id="dialog-gender"></span></li>
           </ul>
         </section>
@@ -74,7 +71,7 @@
 
     <!--DELETE DIALOG-->
     <dialog id="dialog-delete-artist">
-      <h2>Vil du slette dette medlem?</h2>
+      <h2>Delete this artist?</h2>
       <p id="dialog-delete-artist-name"></p>
       <form action="" id="form-delete-artist">
         <div id="delete-grid">
