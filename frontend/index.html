@@ -10,7 +10,7 @@
   <body>
     <div class="filter-grid">
       <div>
-        <button id="create-user-btn">Opret medlem</button>
+        <button id="create-artist-btn">Opret medlem</button>
       </div>
       <div>
         <label for="searchbar"></label>
@@ -29,18 +29,18 @@
     </div>
 
     <div>
-      <section id="users" class="grid-container"></section>
+      <section id="artists" class="grid-container"></section>
     </div>
 
-    <!-- USER DIALOG-->
+    <!-- ARTIST DIALOG-->
 
-    <dialog id="dialog-member-info">
+    <dialog id="dialog-artist-info">
       <form method="dialog">
         <button id="dialog-close-btn">X</button>
       </form>
       <section class="dialog-grid">
         <section>
-          <h3><strong>Medlemsinfo</strong></h3>
+          <h3><strong>Artist info</strong></h3>
           <img id="dialog-image" />
           <h4 id="dialog-name">Navn</h4>
           <h4 id="dialog-age">Alder</h4>
@@ -55,120 +55,28 @@
     </dialog>
 
     <!-- CREATE DIALOG-->
-    <dialog id="dialog-create-user">
+    <dialog id="dialog-create-artist">
       <form method="dialog">
         <button id="dialog-close-btn">X</button>
       </form>
-      <h2>Tilføj medlem:</h2>
-      <form id="form-create-user" method="dialog">
-        <label for="firstName">Fornavn:</label>
-        <input type="text" id="create-firstName" name="firstName" placeholder="Skriv fornavn på medlem" required />
-        <label for="lastName">Efternavn:</label>
-        <input type="text" id="create-lastName" name="lastName" placeholder="Skriv efternavn på medlem" required />
-        <label for="age">Alder:</label>
-        <input type="number" id="create-age" name="age" placeholder="Skriv alder på medlem" required />
-        <label for="gender">Køn:</label>
-        <select name="gender" id="create-gender" required>
-          <option value="" selected>Ikke valgt</option>
-          <option value="mand">Mand</option>
-          <option value="kvinde">Kvinde</option>
-          <option value="andet">Andet</option>
-        </select>
-        <label for="subscription">Medlemsskab:</label>
-        <select name="subscription" id="create-subscription" required>
-          <option value="" selected>Ikke valgt</option>
-          <option value="senior">Senior</option>
-          <option value="junior">Junior</option>
-          <option value="passiv">Passiv</option>
-        </select>
-        <label for="role">Rolle:</label>
-        <select name="role" id="create-role" required>
-          <option value="" selected>Ikke valgt</option>
-          <option value="elitesvømmer">Elitesvømmer</option>
-          <option value="svømmer">Svømmer</option>
-          <option value="træner">Træner</option>
-        </select>
-        <label for="discipline">Disciplin:</label>
-        <select name="" id="create-discipline">
-          <option value="butterfly">Butterfly</option>
-          <option value="crawl">Crawl</option>
-          <option value="rygcrawl">Rygcrawl</option>
-          <option value="brystsvømning">Brystsvømning</option>
-        </select>
-        <div class="grid2rows">
-          <label for="extra-disclipline">Tilføj/fjern</label>
-          <div>
-            <button type="button" id="extra-discipline-btn-create">+</button>
-            <button type="button" id="remove-disciplines-btn-create">-</button>
-          </div>
-        </div>
-        <output id="discipline-output-create" name="discipline"></output>
-        <label for="coach" id="coach-label">Træner:</label>
-        <label for="debt">Gæld: </label>
-        <input type="number" id="create-debt" name="debt" placeholder="Skriv gæld" />
-        <label for="image">Image: </label>
-        <input type="url" id="create-image" name="image" placeholder="Sæt IMG URL ind her" required />
-        <button id="form-create-btn">Input musician</button>
-      </form>
+      <h2>Add artist:</h2>
+      <form id="form-create-artist" method="dialog"></form>
     </dialog>
 
     <!-- UPDATE DIALOG-->
-    <dialog id="dialog-update-user">
+    <dialog id="dialog-update-artist">
       <form>
         <button id="dialog-close-btn">X</button>
       </form>
-      <h2>Opdater medlem</h2>
-      <form id="form-update-user" method="dialog">
-        <label for="update-firstName">Fornavn:</label>
-        <input type="text" id="update-firstName" name="firstName" placeholder="Opdater fornavn på medlem" required />
-        <label for="update-lastName">Efternavn:</label>
-        <input type="text" id="update-lastName" name="lastName" placeholder="Opdater efternavn på medlem" required />
-        <label for="update-age">Alder:</label>
-        <input type="number" id="update-age" name="age" placeholder="Opdater alder på medlem" required />
-        <label for="update-gender">Køn:</label>
-        <select name="gender" id="update-gender" required>
-          <option value="">Ikke valgt</option>
-        </select>
-        <label for="update-subscription">Medlemsskab:</label>
-        <select name="subscription" id="update-subscription" required>
-          <option value="">Ikke valgt</option>
-        </select>
-        <label for="update-role">Rolle:</label>
-        <select name="role" id="update-role" required>
-          <option value="">Ikke valgt</option>
-          <option value="elitesvømmer">Elitesvømmer</option>
-          <option value="svømmer">Svømmer</option>
-          <option value="træner">Træner</option>
-        </select>
-        <label for="update-discipline">Disciplin:</label>
-        <select name="" id="update-discipline">
-          <option value="butterfly">Butterfly</option>
-          <option value="crawl">Crawl</option>
-          <option value="rygcrawl">Rygcrawl</option>
-          <option value="brystsvømning">Brystsvømning</option>
-        </select>
-        <div class="grid2rows">
-          <label for="extra-disclipline">Tilføj/fjern</label>
-          <div>
-            <button type="button" id="extra-discipline-btn-update">+</button>
-            <button type="button" id="remove-disciplines-btn-update">-</button>
-          </div>
-        </div>
-        <output id="discipline-output" name="discipline"></output>
-        <label for="coach" id="coach-update-label">Træner:</label>
-        <label for="update-debt">Gæld:</label>
-        <input type="number" name="debt" id="update-debt" />
-        <label for="update-image">Image: </label>
-        <input type="url" id="update-image" name="image" placeholder="Sæt IMG URL ind her" required />
-        <button type="submit" id="form-update-btn">Opdater medlem</button>
-      </form>
+      <h2>Update artist</h2>
+      <form id="form-update-artist" method="dialog"></form>
     </dialog>
 
     <!--DELETE DIALOG-->
-    <dialog id="dialog-delete-user">
+    <dialog id="dialog-delete-artist">
       <h2>Vil du slette dette medlem?</h2>
-      <p id="dialog-delete-user-name"></p>
-      <form action="" id="form-delete-user">
+      <p id="dialog-delete-artist-name"></p>
+      <form action="" id="form-delete-artist">
         <div id="delete-grid">
           <input id="btn-yes" type="submit" value="Ja" />
           <input id="btn-no" type="button" value="Nej" />
