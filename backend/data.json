@@ -1,1 +1,65 @@
-{"name":"John Doe","birthDate":"1990-01-01","activeSince":"2005-01-01","labels":["Label1","Label2"],"website":"https://example.com","image":"https://example.com/image.jpg","shortDescription":"Short description"}
+[
+  {
+    "name": "Michael Jackson",
+    "birthdate": "August 29, 1958",
+    "activeSince": "1964",
+    "labels": ["Epic Records", "Motown"],
+    "website": "https://www.michaeljackson.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "The King of Pop, known for hits like 'Thriller' and 'Billie Jean.'"
+  },
+  {
+    "name": "Madonna",
+    "birthdate": "August 16, 1958",
+    "activeSince": "1982",
+    "labels": ["Warner Bros. Records", "Sire Records"],
+    "website": "https://www.madonna.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "The Queen of Pop, famous for 'Like a Virgin' and 'Material Girl.'"
+  },
+  {
+    "name": "Elvis Presley",
+    "birthdate": "January 8, 1935",
+    "activeSince": "1954",
+    "labels": ["RCA Records", "Sun Records"],
+    "website": "https://www.elvis.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "The King of Rock 'n' Roll, known for 'Hound Dog' and 'Jailhouse Rock.'"
+  },
+  {
+    "name": "Beyoncé",
+    "birthdate": "September 4, 1981",
+    "activeSince": "1997",
+    "labels": ["Columbia Records", "Parkwood Entertainment"],
+    "website": "https://www.beyonce.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "An iconic pop and R&B artist, known for hits like 'Single Ladies' and 'Formation.'"
+  },
+  {
+    "name": "Bob Dylan",
+    "birthdate": "May 24, 1941",
+    "activeSince": "1961",
+    "labels": ["Columbia Records"],
+    "website": "https://www.bobdylan.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "A legendary folk and rock musician, famous for 'Blowin' in the Wind' and 'Like a Rolling Stone.'"
+  },
+  {
+    "name": "Adele",
+    "birthdate": "May 5, 1988",
+    "activeSince": "2006",
+    "labels": ["XL Recordings", "Columbia Records"],
+    "website": "https://www.adele.com/",
+    "image": "https://picsum.photos/200/300",
+    "shortDescription": "A soulful pop singer-songwriter, known for 'Someone Like You' and 'Hello.'"
+  },
+  {
+    "name": "Taylor Swift",
+    "birthdate": "December 13, 1989",
+    "activeSince": "2006",
+    "labels": ["Big Machine Records", "Republic Records"],
+    "website": "https://www.taylorswift.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_%28cropped%29.png",
+    "shortDescription": "A multi-genre singer-songwriter, known for 'Love Story' and 'Shake It Off.'"
+  }
+]

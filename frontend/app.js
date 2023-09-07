@@ -9,14 +9,9 @@ async function initApp() {
   console.log("frontend init");
   // Get artist list
   globalArtists = await getArtists();
-  await createArtist("John Doe", "1990-01-01", "2005-01-01", ["Label1", "Label2"], "https://example.com", "https://example.com/image.jpg", "Short description")
-    .then(response => {
-      globalArtists.push(response);
-      console.log("Artist created:", response);
-    }) // I know too much about errors now
-    .catch(error => {
-      console.error("Failed to create artist:", error);
-    });
+  const artistEx = await createArtist("John Doe", "1990-01-01", "2005-01-01", ["Label1", "Label2"], "https://example.com", "https://example.com/image.jpg", "Short description")
+  globalArtists.push(artistEx);
+  console.log("Artist created:", artistEx);
   console.log(globalArtists);
   displayArtists(globalArtists);
   document.querySelector("#create-artist-btn").addEventListener("click", showCreateArtistDialog);
