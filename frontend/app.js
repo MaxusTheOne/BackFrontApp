@@ -8,10 +8,9 @@ let globalArtists = [];
 async function initApp() {
   console.log("frontend init");
   // Get artist list
-  globalArtists = await getArtists();
-  const artistEx = await createArtist("John Doe", "1990-01-01", "2005-01-01", ["Label1", "Label2"], "https://example.com", "https://example.com/image.jpg", "Short description")
-  globalArtists.push(artistEx);
+  const artistEx = await createArtist("John Heck", "1990-01-01", "2005-01-01", ["Label1", "Label2"], "https://example.com", "https://example.com/image.jpg", "Short description")
   console.log("Artist created:", artistEx);
+  globalArtists = await getArtists();
   console.log(globalArtists);
   displayArtists(globalArtists);
   document.querySelector("#create-artist-btn").addEventListener("click", showCreateArtistDialog);
@@ -41,10 +40,23 @@ function displayArtist(artistObj) {
   document.querySelector("#artists article:last-child .btn-update").addEventListener("click", () => updateClicked(artistObj));
   document.querySelector("#artists article:last-child img").addEventListener("click", () => showArtistModal(artistObj));
 }
-function updateClicked(userObject) {
+function updateClicked(artistObj) {
   document.querySelector("#dialog-update-artist").showModal();
+  console.log(artistObj);
   document.querySelector("#update-image").src = userObject.image;
-  document.querySelector("#form-update-artist").addEventListener("submit", updateArtistClicked);
+  document.querySelector("#form-update-artist").addEventListener("submit", updateArtistClicked);  selectedArtist = artist;
+
+  const form = document.querySelector("#form-edit-artist");
+
+  form.name.value = artistObj.name;
+  form.birthdate.value = artistObj.birthdate;
+  form.activeSince.value = artistObj.activeSince;
+  form.label.value = artistObj.label;
+  form.website.value = artistObj.website;
+  // form.genres.value = artistObj.genres;
+  // document.querySelector("#genre-output-edit").textContent = artist.genres;
+  form.description.value = artist.shortDescription;
+
 }
 
 function deleteClicked(userObject) {
@@ -55,7 +67,9 @@ function showArtistModal(user) {
   document.querySelector("#dialog-artist-info").showModal();
 }
 
-function updateArtistClicked() {}
+function updateArtistClicked() {
+
+}
 
 function showCreateArtistDialog() {
   document.querySelector("#dialog-create-artist").showModal();

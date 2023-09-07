@@ -81,7 +81,21 @@
       </form>
       <h2>Update artist</h2>
       <img id="update-image" src="" alt="" />
-      <form id="form-update-artist" method="dialog"></form>
+      <form id="form-update-artist" method="dialog">
+        <label for="firstName">Name: <input type="text" id="update-name" name="name" placeholder="Artist name" required /></label>
+        <label for="birthdate">Birthdate: <input type="date" id="update-birthDate" name="birthDate" placeholder="Artist birthdate" required /></label>
+        <label for="activeSince">Active since: <input type="text" id="update-activeSince" name="activeSince" placeholder="Artist active since" required /></label>
+        <div>
+          <label for="labels">Labels: <input type="text" id="update-labels" name="labels" placeholder="Artist labels" required /></label>
+        </div>
+        <label for="website">Website: <input type="url" id="update-website" name="website" placeholder="Artist website" required /></label>
+        <div></div>
+        <label for="image">Image: <input type="text" id="update-image" name="image" placeholder="Artist image" required /></label>
+        <div></div>
+        <label for="shortDescription">Short description: <input type="text" id="update-shortDescription" name="shortDescription" placeholder="Artist shortDescription" required /></label>
+        <div></div>
+        <button id="form-update-btn">update profile</button>
+      </form>
     </dialog>
 
     <!--DELETE DIALOG-->
