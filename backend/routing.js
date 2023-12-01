@@ -28,6 +28,15 @@ app.get("/artists", async (request, response) => {
   const parsedData = await JSON.parse(data);
   response.json(parsedData);
 });
+app.delete("/artists/:id", async (request, response) =>{
+  const id = request.params.id
+  const data = await fs.readFile(path);
+  const parsedData = await JSON.parse(data);
+  const artists = parsedData.filter((a) => a.id != id)
+
+  fs.writeFile("backend/data.json", JSON.stringify(artists))
+  response.json(id);
+})
 
 //empty default responses
 app.get("/", async (request, response) => { 
