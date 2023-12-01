@@ -28,6 +28,13 @@ app.get("/artists", async (request, response) => {
   const parsedData = await JSON.parse(data);
   response.json(parsedData);
 });
+app.get("/artists/:id", async (request, response) => {
+  const id = request.params.id
+  const data = await fs.readFile(path);
+  const parsedData = await JSON.parse(data);
+  const foundArtist = parsedData.find(a => a.id == id)
+  response.json(foundArtist);
+});
 app.delete("/artists/:id", async (request, response) =>{
   const id = request.params.id
   const data = await fs.readFile(path);
@@ -37,7 +44,16 @@ app.delete("/artists/:id", async (request, response) =>{
   fs.writeFile("backend/data.json", JSON.stringify(artists))
   response.json(id);
 })
-
+app.put("artists/:id", async (request, response) => {
+  const id = request.params.id
+  const data = await fs.readFile(path);
+  const parsedData = await JSON.parse(data);
+  const findArtistIndex = parsedData.findIndex(a => a.id == id)
+  const updatedArtist = request.body
+  parsedData[findArtistIndex] = updatedArtist
+  fs.writeFile("backend/data.json", JSON.stringify(parsedData))
+  response.json(updatedArtist)
+})
 //empty default responses
 app.get("/", async (request, response) => { 
   response.send("empty get request");
